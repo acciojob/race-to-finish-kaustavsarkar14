@@ -16,7 +16,7 @@ for (let i = 0; i < 5; i++) {
 }
 Promise.any(promises) 
   .then((result) => {
-    outputDiv.textContent = result;
+    output.textContent = result;
   })
   .catch((error) => {
     console.error(error);
