@@ -1,4 +1,23 @@
 window.promises = [];
 
-// Do not change the code above this
-// add your promises to the array `promises`
+function getRandomTime() {
+  return Math.floor(Math.random() * 5) + 1; // Random time between 1 and 5 seconds
+}
+
+for (let i = 0; i < 5; i++) {
+  window.promises.push(
+    new Promise((resolve) => {
+      const randomTime = getRandomTime();
+      setTimeout(() => {
+        resolve(`Promise ${i + 1} resolved in ${randomTime} seconds`);
+      }, randomTime * 1000);
+    })
+  );
+}
+Promise.any(promises) 
+  .then((result) => {
+    outputDiv.textContent = result;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
