@@ -7,7 +7,7 @@ function getRandomTime() {
 for (let i = 0; i < 5; i++) {
   window.promises.push(
     new Promise((resolve) => {
-      const randomTime = getRandomTime();
+      const randomTime = 1
       setTimeout(() => {
         resolve(`Promise ${i + 1} resolved in ${randomTime} seconds`);
       }, randomTime * 1000);
@@ -19,5 +19,5 @@ Promise.any(promises)
     output.textContent = result;
   })
   .catch((error) => {
-    console.error(error);
+    console.error(error); 
   });
